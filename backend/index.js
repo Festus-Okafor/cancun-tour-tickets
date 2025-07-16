@@ -1,8 +1,9 @@
 import express from 'express'
-import mongoose from 'mongoose'
+//import mongoose from 'mongoose'
 import cors from 'cors'
 import 'dotenv/config'
 import connectDb from './db.js'
+import users from './models'
 
 
 
@@ -15,7 +16,13 @@ console.log(`mongoDB connected`)
 app.use(express.json())
 app.use(cors())
 
-app.get('/', (req, res) =>{
+app.get('/users', async (req, res) =>{
+  try{
+       const users = users.find({})
+
+  } catch (e){
+        res.status(200).json(e) 
+     }
     res.json('trial working')
 })
 
