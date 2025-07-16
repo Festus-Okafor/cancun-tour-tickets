@@ -16,9 +16,10 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', (req, res) =>{
-    res.send('trial working')
+    res.json('trial working')
 })
 
 app.listen(port, ()=>{
     console.log('app is listening on port:', port)
+    connectDb()
 })
