@@ -1,13 +1,13 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 const HomePage = () => {
     
    
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Hotels', path: '/' },
-        { name: 'Experience', path: '/' },
-        { name: 'About', path: '/' },
+        { name: 'Home', path: '/Home' },
+        { name: 'Hotels', path: '/Hotels' },
+        { name: 'Experience', path: '/Experience' },
+        { name: 'About', path: '/About' },
     ];
 
     const ref = React.useRef(null)
@@ -38,10 +38,11 @@ const HomePage = () => {
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
                     {navLinks.map((link, i) => (
-                        <a key={i} href={link.path} className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
+                        <Link to={link.path}> <div  key={i}  className={`group flex flex-col gap-0.5 ${isScrolled ? "text-gray-700" : "text-white"}`}>
                             {link.name}
                             <div className={`${isScrolled ? "bg-gray-700" : "bg-white"} h-0.5 w-0 group-hover:w-full transition-all duration-300`} />
-                        </a>
+                        </div>
+                        </Link>
                     ))}
                     <button className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-white'} transition-all`}>
                         Discounts
@@ -56,11 +57,12 @@ const HomePage = () => {
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />
                     </svg> 
                     </a>
-                    <a href="./Login.jsx">
+                    <Link to={"/Login"}><div >
                     <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
                      Login
                     </button>
-                    </a>               
+                    </div>   
+                    </Link>           
                 </div>
 
                 {/* Mobile Menu Button */}

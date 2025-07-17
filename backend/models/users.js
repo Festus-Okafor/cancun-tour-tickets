@@ -8,5 +8,5 @@ const usersSchema = mongoose.Schema({
     gender: {type: String}
 })
 
-const user = mongoose.model('users', usersSchema)
+const users = mongoose.model('users', usersSchema)
 export default users

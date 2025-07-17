@@ -1,11 +1,9 @@
 import express from 'express'
-//import mongoose from 'mongoose'
+import mongoose from 'mongoose'
 import cors from 'cors'
 import 'dotenv/config'
 import connectDb from './db.js'
-import users from './models'
-
-
+import users from './models/users.js'
 
 const app = express()
 const port = process.env.PORT  
