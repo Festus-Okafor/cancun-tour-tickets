@@ -7,14 +7,13 @@ import Login from  './components/Login.jsx'
 import About from './components/About.jsx'
 import { useEffect } from 'react'
 import {Route, Routes} from 'react-router-dom'
-
 import './App.css'
 
 function App() {
    useEffect(() =>{
   async function userData(){
     try{
-      const response = fetch('http://localhost:3003')
+      const response = fetch('http://localhost:3003/Login')
                       if (!response.ok){
                         throw new Error(`HTTP error:`, $(response.status))
                       }
@@ -32,7 +31,7 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path={"/"} element={<HomePage/>}/>
+      <Route path={"/Home"} element={<HomePage/>}/>
       <Route path={"/Hotels"} element={<Hotels/>}/>
       <Route path={"/Experience"} element={<Experience/>}/>
       <Route path={"/About"} element={<About/>}/>

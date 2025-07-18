@@ -1,8 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+
+
+
+
 const HomePage = () => {
-    
-   
+      
     const navLinks = [
         { name: 'Home', path: '/Home' },
         { name: 'Hotels', path: '/Hotels' },
@@ -26,6 +29,8 @@ const HomePage = () => {
 
   return (
     <>
+    <div className="HomePage-Background">
+     
         <div ref={ref} className="h-88 md:h-64 overflow-y-scroll">
             <p className="w-6 h-[400px]"></p>
             <nav className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
@@ -100,6 +105,11 @@ const HomePage = () => {
                 </div>
             </nav>
         </div>
+        <div className="foot-text">Pick it up and hit the road. Let us plan your next trip to Cancun or anywhere in Mexico!</div>
+
+          
+       </div>
+     
     </>
   )
 }
