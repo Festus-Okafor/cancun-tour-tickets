@@ -1,14 +1,14 @@
 import React from 'react'
 //import {useRef , useEffect, useState} from 'react'
 
-const Login = () => {
+const Login = ({setUsers, users}) => {
 
  
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
-  
+    
 
 async function handleSubmit(e) {
  e.preventDefault()
@@ -18,21 +18,22 @@ async function handleSubmit(e) {
     email,
     password
  }
-  await fetch('http://localhost:3003/users', {
+    const response = await fetch('http://localhost:3003/users', {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{
         'content-type': 'application/json'
     }
  })
-  const newData = await response.json(users)
-  console.log(newData)
+  const newUsers = await response.json()
+  console.log(newUsers)
+  setUsers([...users, newUsers])
 }
 
   return (
     <>
     <div className="Login-container">
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-indigo"  method="post"  action="/Login">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-indigo">
             <p className="text-2xl font-medium m-auto">
                 <span className="text-indigo-500">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>
