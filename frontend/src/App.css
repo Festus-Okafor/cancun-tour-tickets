@@ -1,6 +1,5 @@
 
 
-
 .HomePage-Background{
     background-image:url('./assets/images/bkg.jpg');
     background-Size:cover;
@@ -46,11 +45,20 @@ img{
     background-color: indigo;
     height: 100vh;
 }
+
 .Experience-cont{
-    background-color: indigo;
-    color: white;
-    height: 100vh;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
+.Experience-Categories{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
 @import 'tailwindcss'
 
 

@@ -12,6 +12,9 @@ const HomePage = () => {
         { name: 'Experience', path: '/Experience' },
         { name: 'About', path: '/About' },
     ];
+    
+
+    
 
     const ref = React.useRef(null)
 
@@ -27,6 +30,8 @@ const HomePage = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+
+
   return (
     <>
     <div className="HomePage-Background">
@@ -35,10 +40,7 @@ const HomePage = () => {
             <p className="w-6 h-[400px]"></p>
             <nav className={`fixed top-0 left-0 bg-indigo-500 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 ${isScrolled ? "bg-white/80 shadow-md text-gray-700 backdrop-blur-lg py-3 md:py-4" : "py-4 md:py-6"}`}>
 
-                {/* Logo */}
-              {/*   <a href="https://prebuiltui.com" className="flex items-center gap-2">
-                    <img src={"https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoWhite.svg"} alt="logo" className={`h-9 ${isScrolled && "invert opacity-80"}`} />
-                </a> */}
+             
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
@@ -105,6 +107,8 @@ const HomePage = () => {
                 </div>
             </nav>
         </div>
+
+
         <div className="foot-text">Pick it up and hit the road. Let us plan your next trip to Cancun or anywhere in Mexico!</div>
       
          
@@ -115,7 +119,7 @@ const HomePage = () => {
                 <a href="#" className="font-medium text-white-500 hover:text-white transition-all">
                     Services
                 </a>
-                <a href="#" className="font-medium text-white-500 hover:text-white transition-all">
+                <a href="localhost:5173/About" className="font-medium text-white-500 hover:text-white transition-all">
                     Contact
                 </a>
             </div>
@@ -150,7 +154,7 @@ const HomePage = () => {
 
             </div>
 
-            <p className="mt-8 text-center"> Copyright © 2025 <a href="https://localhost:5173">MEXtour</a>. All rights reservered.</p>
+            <p className="mt-8 text-center"> Copyright © 2025 <a href="localhost:5173">MEXtour</a>. All rights reservered.</p>
         </footer>
        </div>
     </>
