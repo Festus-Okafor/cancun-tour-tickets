@@ -10,15 +10,22 @@ import {Route, Routes} from 'react-router-dom'
 import './App.css'
 
 function App() {
-   useEffect(() =>{
+     
+    
+   // [users, setUsers]= useState([])
+
+
+
+  useEffect(() =>{
   async function userData(){
     try{
-      const response = fetch('http://localhost:3003/Login')
+      const response = fetch('http://localhost:3003')
                       if (!response.ok){
                         throw new Error(`HTTP error:`, $(response.status))
                       }
       const data = await response.json()
        console.log(data)
+       setUsers(data)
        }catch(e){
         console.log(e)
        } 

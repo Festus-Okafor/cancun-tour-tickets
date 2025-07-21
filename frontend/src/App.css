@@ -43,6 +43,11 @@ img{
     background-color: indigo;
     height: 100vh;
 }
+.Experience-cont{
+    background-color: indigo;
+    color: white;
+    height: 100vh;
+}
 
 @import 'tailwindcss'
 

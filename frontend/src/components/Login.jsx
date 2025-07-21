@@ -1,4 +1,5 @@
 import React from 'react'
+//import {useRef , useEffect, useState} from 'react'
 
 const Login = () => {
 
@@ -7,13 +8,31 @@ const Login = () => {
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+  
 
+async function handleSubmit(e) {
+ e.preventDefault()
 
+ const data = {
+    name,
+    email,
+    password
+ }
+  await fetch('http://localhost:3003/users', {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers:{
+        'content-type': 'application/json'
+    }
+ })
+  const newData = await response.json(users)
+  console.log(newData)
+}
 
   return (
     <>
     <div className="Login-container">
-        <form className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-indigo">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-indigo"  method="post"  action="/Login">
             <p className="text-2xl font-medium m-auto">
                 <span className="text-indigo-500">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>

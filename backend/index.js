@@ -17,12 +17,24 @@ app.use(cors())
 app.get('/users', async (req, res) =>{
   try{
        const users = users.find({})
-
-  } catch (e){
-        res.status(200).json(e) 
+        res.status(200).json(users)
+    } catch (error){
+        console.log(error)
+        res.status(400).json(error)
      }
-    res.json('trial working')
+   // res.json('trial working')
 })
+
+
+app.post("/users", async(req, res) => {
+      try{
+    const users = await users.create(req.body)
+    res.status(200).json(users)
+      } catch(error){
+        res.status(400).json(error)
+      }
+})
+
 
 app.listen(port, ()=>{
     console.log('app is listening on port:', port)
