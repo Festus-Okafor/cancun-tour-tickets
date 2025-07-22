@@ -44,6 +44,8 @@ app.post('/users', async(req, res) => {
    await newUser.save()
    return res.json({message: "record registered"})
 })
+
+
     
    
 

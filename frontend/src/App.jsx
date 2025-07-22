@@ -7,6 +7,7 @@ import Login from "./components/Login.jsx";
 import About from "./components/About.jsx";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import Details from './components/Details.jsx'
 
 import "./App.css";
 
@@ -39,7 +40,8 @@ function App() {
     <>
    
       <Routes>
-        <Route path={"/"} element={<HomePage />} />
+        <Route path={"/Details/:topic"}  element={<Details/>}/>
+        <Route path={"/"} element={<HomePage />}/>
         <Route path={"/Hotels"} element={<Hotels />} />
         <Route path={"/Experience"} element={<Experience/>} />
         <Route path={"/About"} element={<About />} />
