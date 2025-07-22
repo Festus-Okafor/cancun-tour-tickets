@@ -4,6 +4,8 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDb from './db.js'
 import Users from './models/users.js'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 const app = express()
 const port = process.env.PORT  
@@ -26,8 +28,28 @@ app.get('/users', async (req, res) =>{
    // res.json('trial working')
 })
 
-//
-app.post('/users', async(req, res) => {
+app.post('/signup', async(req, res) => {
+    const {name, email, password} = req.body  
+   const users = await Users.findOne({email})
+     if(users){
+     return res.json({message: "user already exist!"})
+  } 
+    const hashpassword = await bcrypt.hash(password, 10)
+    const newUser = new Users({
+    name,
+    email,
+    password: hashpassword,
+     })
+      await newUser.save()
+      return res.json({message: "record registerd"})
+     
+      }
+)
+
+
+
+
+/*app.post('/users', async(req, res) => {
       try{
     const users = await Users.create(req.body)
      res.status(200).json(users)
@@ -35,7 +57,7 @@ app.post('/users', async(req, res) => {
         res.status(400).json(error)
       }
 })
-
+*/
 app.delete('/users/:id', async (req, res) =>{
     try{
         console.log("DELETE/users/:id")

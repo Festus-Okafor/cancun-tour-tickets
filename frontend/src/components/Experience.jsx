@@ -83,41 +83,41 @@ const Experience = () => {
    </div>
 
    <div className="Experience-Categories">
-   <link to ="#">
+   <a href="#">
     <div className="wellness">
     <h1>WELLNESS</h1>
     <img src="./src/assets/images/wellnesspic.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>A spirit revitalization wellness experience with yoga, meditation, nutrition, education, massages, cenote visits, and traditional Mayan medicine
     spirit cleansing ub tranquil pictureque environment.</p>
    </div>
-   </link>
+   </a>
    
-    <link to ="#">
+    <a href="#">
    <div className="vip-party">
    <h1>VIP-PARTY</h1>
    <img src="./src/assets/images/vip-party.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>Vibrant Nightclubs, exciting dance parties, upscale cocktail events, epic pool bashes, and unforgetable social encounters. With no lines, experience it all
     as a VIP.</p>
    </div>
-   </link>
+   </a>
 
-   <link to="#">
+   <a href="#">
    <div className= "fitness">
    <h1>FITNESS</h1>
        <img src="./src/assets/images/fitness.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>A vivacious active lifestyle experience. Hiking, rock climbing, boxing aerobics, cross-country skating, biking, swimming, and dance aerobics
      in stunning natural destinations.</p>
    </div>
-   </link>
+   </a>
 
-  <link to ="#">
+  <a href="#">
   <div className ="culture">
   <h1>CULTURE</h1>
       <img src="./src/assets/images/culture.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>Experience Mexican & Mayan culture with ancient rituals, h1 cuisine, authentic story tellers and performers. As well as Mayan guided
     visits to archeological sites and important cenotes.</p>
   </div>
-  </link>
+  </a>
   </div>
 
 

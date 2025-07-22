@@ -58,12 +58,12 @@ const HomePage = () => {
 
                 {/* Desktop Right */}
                 <div className="hidden md:flex items-center gap-4">
-                   <link to="">
+                   <a href="">
                    <svg className={`h-6 w-6 text-white transition-all duration-500 ${isScrolled ? "invert" : ""}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                         <circle cx="11" cy="11" r="8" />
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />
                     </svg> 
-                    </link>
+                    </a>
                     <Link to={"/Login"}><div >
                     <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
                      Login
@@ -116,41 +116,41 @@ const HomePage = () => {
         <footer className="flex flex-col  items-center justify-around w-full py-16 text-sm text-gray-800/70">
             <div className="flex items-center gap-8">
                 
-                <link to="#" className="font-medium text-white-500 hover:text-white transition-all">
+                <a href="#" className="font-medium text-white-500 hover:text-white transition-all">
                     Services
-                </link>
-                <link to="localhost:5173/About" className="font-medium text-white-500 hover:text-white transition-all">
+                </a>
+                <a href="localhost:5173/About" className="font-medium text-white-500 hover:text-white transition-all">
                     Contact
-                </link>
+                </a>
             </div>
 
 
             <div className="flex items-center gap-4 mt-8 text-indigo-500">
-                <link to="#" className="hover:-translate-y-0.5 transition-all duration-300">
+                <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                </link>
+                </a>
 
 
-                <link to="#" className="hover:-translate-y-0.5 transition-all duration-300">
+                <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17 2H7a5 5 0 0 0-5 5v10a5 5 0 0 0 5 5h10a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M16 11.37a4 4 0 1 1-7.914 1.173A4 4 0 0 1 16 11.37m1.5-4.87h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                </link>
+                </a>
 
-                <link to="#" className="hover:-translate-y-0.5 transition-all duration-300">
+                <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6M6 9H2v12h4zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                </link>
+                </a>
 
-                <link to="#" className="hover:-translate-y-0.5 transition-all duration-300">
+                <a href="#" className="hover:-translate-y-0.5 transition-all duration-300">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                </link>
+                </a>
 
             </div>
 
