@@ -39,7 +39,7 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 img{
-    border-radius: 60%;
+    border-radius: 20%;
 }
 .Login-container{
     background-color: indigo;
@@ -47,18 +47,58 @@ img{
 }
 
 .Experience-cont{
+     background-color: indigo;
+     color: white;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+
+}
+.Experience-cont h1{
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Experience-Categories {
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-
-}
-.Experience-Categories{
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-
 }
 
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
+.wellness h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.vip-party h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.fitness h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.culture h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.Hotels-Background{
+    background-image:url('./assets/images/relaxation.jpg');
+    background-Size:cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
 @import 'tailwindcss'
 
 

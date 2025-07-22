@@ -32,15 +32,18 @@ function App() {
   // website go blank for few hours and was rectified.
   //fixed passing prop to the login route, since im to use it at the login page/
   return (
+     
     <>
+   
       <Routes>
         <Route path={"/"} element={<HomePage />} />
         <Route path={"/Hotels"} element={<Hotels />} />
-        <Route path={"/Experience"} element={<Experience />} />
+        <Route path={"/Experience"} element={<Experience/>} />
         <Route path={"/About"} element={<About />} />
         <Route path={"/Discounts"} element={<Discounts />} />
         <Route path={"/Login"} element={<Login setUsers={setUsers} users ={users} />} />
       </Routes>
+      
     </>
   );
 }
