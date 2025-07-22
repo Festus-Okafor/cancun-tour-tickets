@@ -6,6 +6,7 @@ import connectDb from './db.js'
 import Users from './models/users.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import cookieParser from 'cookie-parser'
 
 const app = express()
 const port = process.env.PORT  
@@ -44,8 +45,21 @@ app.post('/users', async(req, res) => {
    await newUser.save()
    return res.json({message: "record registered"})
 })
-
-
+/*
+app.post('/login', async(req, res) =>{
+  const {email, password} = req.body;
+  const users = await Users.findOne({email})
+  if(!users){
+    return res.json({message: "user is not registered"})
+  }
+  const validPassword = await bcrypt.compare(password, users.password)
+  if(!validPassword){
+    return res.json({message: "password is incorrect"})
+  }
+  const token =jwt.sign({username:users.username}, process.env.KEY, {expireIn: '1h'})
+  res.cookie('token', token, {httpOnly: true, maxAge: 365000})
+  return res.json({status: true, message: "Login successful"})
+})
     
    
 
