@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 //import {useRef , useEffect, useState} from 'react'
 
 const Login = ({setUsers, users}) => {
@@ -8,10 +9,11 @@ const Login = ({setUsers, users}) => {
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
-    
+  
 
 async function handleSubmit(e) {
  e.preventDefault()
+
 
  const data = {
     name,
@@ -37,6 +39,7 @@ async function handleSubmit(e) {
             <p className="text-2xl font-medium m-auto">
                 <span className="text-indigo-500">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>
+
 
 
             {state === "register" && (

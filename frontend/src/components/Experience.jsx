@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 const Experience = () => {
@@ -82,41 +83,41 @@ const Experience = () => {
    </div>
 
    <div className="Experience-Categories">
-   <a href="#">
+   <link to ="#">
     <div className="wellness">
     <h1>WELLNESS</h1>
     <img src="./src/assets/images/wellnesspic.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>A spirit revitalization wellness experience with yoga, meditation, nutrition, education, massages, cenote visits, and traditional Mayan medicine
     spirit cleansing ub tranquil pictureque environment.</p>
    </div>
-   </a>
+   </link>
    
-    <a href="#">
+    <link to ="#">
    <div className="vip-party">
    <h1>VIP-PARTY</h1>
    <img src="./src/assets/images/vip-party.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>Vibrant Nightclubs, exciting dance parties, upscale cocktail events, epic pool bashes, and unforgetable social encounters. With no lines, experience it all
     as a VIP.</p>
    </div>
-   </a>
+   </link>
 
-   <a href="#">
+   <link to="#">
    <div className= "fitness">
    <h1>FITNESS</h1>
        <img src="./src/assets/images/fitness.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>A vivacious active lifestyle experience. Hiking, rock climbing, boxing aerobics, cross-country skating, biking, swimming, and dance aerobics
      in stunning natural destinations.</p>
    </div>
-   </a>
+   </link>
 
-  <a href="#">
+  <link to ="#">
   <div className ="culture">
   <h1>CULTURE</h1>
       <img src="./src/assets/images/culture.jpg"  alt="wellness/pics" width="250px"  height="300px"/>
     <p>Experience Mexican & Mayan culture with ancient rituals, h1 cuisine, authentic story tellers and performers. As well as Mayan guided
     visits to archeological sites and important cenotes.</p>
   </div>
-  </a>
+  </link>
   </div>
 
 
@@ -124,27 +125,20 @@ const Experience = () => {
  <style>{`
 
             @keyframes marqueeScroll {
-
                 0% { transform: translateX(0%); }
-
                 100% { transform: translateX(-50%); }
-
             }
 
 
             .marquee-inner {
-
                 animation: marqueeScroll 25s linear infinite;
-
             }
 
 
             .marquee-reverse {
-
                 animation-direction: reverse;
 
             }
-
         `}
         
         
@@ -152,40 +146,26 @@ const Experience = () => {
 
 
             <div className="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
-
                 <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-
                 <div className="marquee-inner flex transform-gpu min-w-[200%] pt-10 pb-5">
-
                     {[...cardsData, ...cardsData].map((card, index) => (
-
-                        <CreateCard key={index} card={card} />
-
+                       <CreateCard key={index} card={card} />
                     ))}
 
                 </div>
-
                 <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
-
             </div>
 
 
             <div className="marquee-row w-full mx-auto max-w-5xl overflow-hidden relative">
-
                 <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-
                 <div className="marquee-inner marquee-reverse flex transform-gpu min-w-[200%] pt-10 pb-5">
-
                     {[...cardsData, ...cardsData].map((card, index) => (
-
                         <CreateCard key={index} card={card} />
-
                     ))}
 
                 </div>
-
                 <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
-
             </div>
 
  </>
