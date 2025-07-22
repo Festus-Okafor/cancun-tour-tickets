@@ -10,6 +10,7 @@ const Login = ({setUsers, users}) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
   
+const navigate = useNavigate()
 
 async function handleSubmit(e) {
  e.preventDefault()
@@ -28,7 +29,9 @@ async function handleSubmit(e) {
     }
  })
   const newUsers = await response.json()
-  console.log(newUsers)
+  if(newUsers){
+    navigate('/')
+  }
   setUsers([...users, newUsers])
 }
 

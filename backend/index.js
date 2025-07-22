@@ -28,28 +28,27 @@ app.get('/users', async (req, res) =>{
    // res.json('trial working')
 })
 
-app.post('/signup', async(req, res) => {
-    const {name, email, password} = req.body  
+app.post('/users', async(req, res) => {
+   const {name, email, password} = req.body;
    const users = await Users.findOne({email})
-     if(users){
-     return res.json({message: "user already exist!"})
-  } 
-    const hashpassword = await bcrypt.hash(password, 10)
-    const newUser = new Users({
+   if (users){
+    return res.json({message: "user already exist!"})
+   }
+
+   const hashpassword = await bcrypt.hash(password, 10)
+   const newUser = new Users({
     name,
     email,
     password: hashpassword,
-     })
-      await newUser.save()
-      return res.json({message: "record registerd"})
-     
-      }
-)
+   })
+   await newUser.save()
+   return res.json({message: "record registered"})
+})
+    
+   
 
-
-
-
-/*app.post('/users', async(req, res) => {
+/*
+app.post('/users', async(req, res) => {
       try{
     const users = await Users.create(req.body)
      res.status(200).json(users)
@@ -58,6 +57,7 @@ app.post('/signup', async(req, res) => {
       }
 })
 */
+
 app.delete('/users/:id', async (req, res) =>{
     try{
         console.log("DELETE/users/:id")
