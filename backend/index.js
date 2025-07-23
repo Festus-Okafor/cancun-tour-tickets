@@ -45,14 +45,14 @@ app.post('/users', async(req, res) => {
    await newUser.save()
    return res.json({message: "record registered"})
 })
-/*
+
 app.post('/loginAuth', async(req, res) =>{
   const {email, password} = req.body;
-  const loginAuth = await LoginAuth.findOne({email})
-  if(!loginAuth){
+  const users = await Users.findOne({email})
+  if(!users){
     return res.json({message: "user is not registered"})
   }
-  const validPassword = await bcrypt.compare(password, loginAuth.password)
+  const validPassword = await bcrypt.compare(password, users.password)
   if(!validPassword){
     return res.json({message: "password is incorrect"})
   }
