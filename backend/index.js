@@ -6,16 +6,16 @@ import connectDb from './db.js'
 import Users from './models/users.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import cookieParser from 'cookie-parser'
+//import cookieParser from 'cookie-parser'
 
 const app = express()
 const port = process.env.PORT  
 await mongoose.connect(process.env.MONGO_URL)
 console.log(`mongoDB connected`)
    
-
 app.use(express.json())
 app.use(cors())
+
 
 app.get('/users', async (req, res) =>{
   try{
@@ -46,17 +46,17 @@ app.post('/users', async(req, res) => {
    return res.json({message: "record registered"})
 })
 /*
-app.post('/login', async(req, res) =>{
+app.post('/loginAuth', async(req, res) =>{
   const {email, password} = req.body;
-  const users = await Users.findOne({email})
-  if(!users){
+  const loginAuth = await LoginAuth.findOne({email})
+  if(!loginAuth){
     return res.json({message: "user is not registered"})
   }
-  const validPassword = await bcrypt.compare(password, users.password)
+  const validPassword = await bcrypt.compare(password, loginAuth.password)
   if(!validPassword){
     return res.json({message: "password is incorrect"})
   }
-  const token =jwt.sign({username:users.username}, process.env.KEY, {expireIn: '1h'})
+  const token =jwt.sign({email:loginAuth.email}, process.env.KEY, {expireIn: '1h'})
   res.cookie('token', token, {httpOnly: true, maxAge: 365000})
   return res.json({status: true, message: "Login successful"})
 })
