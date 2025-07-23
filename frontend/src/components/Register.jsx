@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 //import {useRef , useEffect, useState} from 'react'
 
-const Login = ({setUsers, users}) => {
+const Register = ({setUsers, users}) => {
 
  
     const [state, setState] = React.useState("login");
@@ -37,7 +37,7 @@ async function handleSubmit(e) {
 
   return (
     <>
-    <div className="Login-container">
+    <div className="Register-container">
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 m-auto items-start p-8 py-12 w-80 sm:w-[352px] rounded-lg shadow-xl border border-gray-200 bg-indigo">
             <p className="text-2xl font-medium m-auto">
                 <span className="text-indigo-500">User</span> {state === "login" ? "Login" : "Sign Up"}
@@ -84,4 +84,4 @@ async function handleSubmit(e) {
   )
 }
 
-export default Login
+export default Register

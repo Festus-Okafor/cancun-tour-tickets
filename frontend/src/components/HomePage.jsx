@@ -64,9 +64,9 @@ const HomePage = () => {
                         <line x1="21" y1="21" x2="16.65" y2="16.65" />
                     </svg> 
                     </a>
-                    <Link to={"/Login"}><div >
+                    <Link to={"/Register"}><div >
                     <button className={`px-8 py-2.5 rounded-full ml-4 transition-all duration-500 ${isScrolled ? "text-white bg-black" : "bg-white text-black"}`}>
-                     Login
+                     Register
                     </button>
                     </div>   
                     </Link>           

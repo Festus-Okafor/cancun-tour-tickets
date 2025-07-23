@@ -3,7 +3,8 @@ import HomePage from "./components/HomePage.jsx";
 import Hotels from "./components/Hotels.jsx";
 import Experience from "./components/Experience.jsx";
 import Discounts from "./components/Discounts.jsx";
-import Login from "./components/Login.jsx";
+import Register from "./components/Register.jsx"
+//import Login from "./components/Register.jsx";
 import About from "./components/About.jsx";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -46,7 +47,7 @@ function App() {
         <Route path={"/Experience"} element={<Experience/>} />
         <Route path={"/About"} element={<About />} />
         <Route path={"/Discounts"} element={<Discounts />} />
-        <Route path={"/Login"} element={<Login setUsers={setUsers} users ={users} />} />
+        <Route path={"/Register"} element={<Register setUsers={setUsers} users ={users} />} />
       </Routes>
       
     </>
