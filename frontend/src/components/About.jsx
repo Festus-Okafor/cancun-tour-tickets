@@ -7,7 +7,6 @@ const About = () => {
   return (
     <>
    
-
     <div className="abt-container">
      <div className="abt-title">Our Story</div>
 
@@ -19,8 +18,13 @@ const About = () => {
             <div>
               <img src="./src/assets/images/abt-us.jpg" alt="abt-us" width="400px"  height="900px"/>
             </div>
-       </div>
+           
     </div>
+     <div className="contact-info">
+             <p>Drop a line: (917)-900-9815</p>
+             <p>Email Address: contact@MEXtour.com</p>
+            </div>
+       </div>
     </>
   )
 }

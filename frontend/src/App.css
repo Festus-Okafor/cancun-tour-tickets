@@ -120,6 +120,10 @@ h1{
     color: yellow;
     margin-left: 5px;
 }
+.contact-info{
+    color: white;
+    margin-left: 10px;
+}
 @import 'tailwindcss'
 
 
