@@ -20,3 +20,4 @@
 
  #Technologies
  This is a MERN project utilizing MongoDB, Express, React, and Node. And some of the dependencies i utilized includes react, react-router-dom, bcrypt, cors , cookieParser, dotenv, express, jsonwebtoken, mongoose, nodemon, vite and tailwindcss. Build-tools: Babel, Code-Quality-tool: ESLint, prettier.
+ 
