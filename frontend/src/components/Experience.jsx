@@ -122,7 +122,7 @@ const Experience = () => {
 
 
 
- <style>{`
+        <style>{`
 
             @keyframes marqueeScroll {
                 0% { transform: translateX(0%); }

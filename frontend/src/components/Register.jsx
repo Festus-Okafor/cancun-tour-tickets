@@ -30,11 +30,12 @@ async function handleSubmit(e) {
  })
   const newUsers = await response.json()
   if(newUsers){
-    navigate('/Register')
+    navigate('/')
   } alert('Successfuly Registered, Please go ahead and Login')
   setUsers([...users, newUsers])
 }
   
+
 
   return (
     <>
