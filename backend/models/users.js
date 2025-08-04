@@ -1,8 +1,7 @@
 
-
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 const schema = mongoose.Schema;
-const usersSchema = mongoose.Schema({
+const usersSchema = new schema({
 
     name: {
         type: String
@@ -14,7 +13,6 @@ const usersSchema = mongoose.Schema({
         },
     password: {
         type: String ,
-         required: true
         },
 },
    {timestamps: true});
