@@ -48,40 +48,10 @@ async function handleSubmit(e) {
     if (state === "register") setUsers([...users, result]);
   }
 }
+
+
+
 // ...existing code...
-
-/*
-async function handleSubmit(e) {
- e.preventDefault() // stop the form from refreshing the page 
-
-//creating an object to hold the input data
-//and it is this inputs thats sent to the backend using the form fetch api
- const data = {
-    name,
-    email,
-    password
- }
-   
-
-    // Registering a new user//posting it to the backend
-    const response = await fetch('http://localhost:3003/user', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers:{
-        'content-type': 'application/json'
-    }
- })
- //receiving the response from the backend 
-  const newUsers = await response.json()
-  if(newUsers){
-    navigate('/')
-  } alert('Successfuly Registered, Please go ahead and Login')
-  //if the newUser is truthy.. that is if it returned back with data, the new data should be added to the existing users
-  setUsers([...users, newUsers])
-}
-*/
-
-
   return (
     <>
     <div className="Register-container">
