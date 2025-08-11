@@ -12,29 +12,74 @@ const Register = ({setUsers, users}) => {
   
 const navigate = useNavigate()
 
+
+
+// Helper function for login/register POST requests
+async function postAuthForm(state, data) {
+  const url =
+    state === "register"
+      ? "http://localhost:3003/users"
+      : "http://localhost:3003/login";
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "content-type": "application/json",
+    },
+  });
+   
+return response.ok ? await response.json() : null;
+}
+
+
+
+// ...existing code...
 async function handleSubmit(e) {
- e.preventDefault()
+  e.preventDefault();
+  const data = { name, email, password };
+  const result = await postAuthForm(state, data);
+  if (result) {
+    navigate("/");
+    alert(
+      state === "register"
+        ? "Successfully Registered, Please go ahead and Login"
+        : "Login Successful"
+    );
+    if (state === "register") setUsers([...users, result]);
+  }
+}
+// ...existing code...
 
+/*
+async function handleSubmit(e) {
+ e.preventDefault() // stop the form from refreshing the page 
 
+//creating an object to hold the input data
+//and it is this inputs thats sent to the backend using the form fetch api
  const data = {
     name,
     email,
     password
  }
-    const response = await fetch('http://localhost:3003/users', {
+   
+
+    // Registering a new user//posting it to the backend
+    const response = await fetch('http://localhost:3003/user', {
     method: 'POST',
     body: JSON.stringify(data),
     headers:{
         'content-type': 'application/json'
     }
  })
+ //receiving the response from the backend 
   const newUsers = await response.json()
   if(newUsers){
     navigate('/')
   } alert('Successfuly Registered, Please go ahead and Login')
+  //if the newUser is truthy.. that is if it returned back with data, the new data should be added to the existing users
   setUsers([...users, newUsers])
 }
-  
+*/
 
 
   return (
@@ -44,7 +89,7 @@ async function handleSubmit(e) {
             <p className="text-2xl font-medium m-auto">
                 <span className="text-indigo-500">User</span> {state === "login" ? "Login" : "Sign Up"}
             </p>
-
+          
 
 
             {state === "register" && (
@@ -57,7 +102,7 @@ async function handleSubmit(e) {
             )}
                 <div className="w-full ">
                     <p>Email</p>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="email" required />
+                    <input onChange={(e) => setEmail(e.target.value)} value={email} placeholder="type here" className="border border-gray-200 rounded w-full p-2 mt-1 outline-indigo-500" type="text" required />
                 </div>
 
                 <div className="w-full ">
@@ -66,6 +111,8 @@ async function handleSubmit(e) {
                 </div>
 
 
+
+           
             {state === "register" ? (
                 <p>
                     Already have account? <span onClick={() => setState("login")} className="text-indigo-500 cursor-pointer">click here</span>
@@ -88,5 +135,4 @@ async function handleSubmit(e) {
     </>
   )
 }
-
 export default Register

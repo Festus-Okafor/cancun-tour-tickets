@@ -4,11 +4,12 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDb from './db.js'
 import routeUsers from './routes/route_users.js'
-import bcrypt from 'bcrypt'
-import jwt from 'jsonwebtoken'
-//import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
+//import routeLogin from './routes/route_login.js'
+
 
 const app = express()
+app.use(bodyParser.json())
 app.use(express.json())
 app.use(cors())
 const port = process.env.PORT  

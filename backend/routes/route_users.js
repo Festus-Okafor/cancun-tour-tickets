@@ -1,5 +1,11 @@
 import express from 'express'
 import Users from '../models/users.js'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
+//import cookieParser from 'cookie-parser'
+
+
+
 
 const routeUsers = express.Router()
 routeUsers.use(express.json())
@@ -78,38 +84,33 @@ routeUsers.delete('/:id', async (req, res) =>{
     }
 })
 
+
+
 /*
 routeUsers.post('/loginAuth', async(req, res) =>{
-  const {email, password} = req.body;
+    const {email, password} = req.body;
+
   //below we querry the database to check if the inputted existed.
-  const loginAuth = await UsersLogin.findOne({email})
-  if(!loginAuth){
+  const users = await Users.findOne({email})
+  if(users){
     //if user does not exist, we display the below string
-    return res.json({message: "user is not registered"})
+    return res.status(200).json({message: "Email exist"})
   }
+  else{
+   return res.status(401).json({message: "Invalid Email"})
 
-  // if the customer or user exist, we compare with the hashed password
-
-  const validPassword = await bcrypt.compare(password, loginAuth.password)
-  if(!validPassword){
-    return res.json({message: "password is incorrect"})
   }
-  
-  const token =jwt.sign({email:loginAuth.email}, process.env.KEY, {expireIn: '5h'})
+   // if the customer or user exist, we compare with the hashed password
+  const validPassword = await bcrypt.compare(password, Users.password)
+  if(validPassword){
+     
+  const token =jwt.sign({email:users.email}, process.env.KEY, {expireIn: '1h'})
   res.cookie('token', token, {httpOnly: true, maxAge: 365000})
   return res.json({status: true, message: "Login successful"})
-})
- */   
-   
-
-/*
-app.post('/', async(req, res) => {
-      try{
-    const users = await Users.create(req.body)
-     res.status(200).json(users)
-      } catch(error){
-        res.status(400).json(error)
-      }
+}})
+    return res.json({message: "password is incorrect"})
+  
+  
 })
 */
 
