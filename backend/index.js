@@ -6,14 +6,16 @@ import 'dotenv/config'
 import connectDb from './db.js'
 import bodyParser from 'body-parser'
 import router from './routes/userRoutes.js'
-//import userRouter from './routes/userRoutes.js'
+//after importing the router, next is to mount the router 
+router.use(express.json());
+import userRouter from './routes/userRoutes.js'
 //const userRouter = require('./routes/route_users.js')
 
 
 
 
 const app = express()
-router.use(express.json());
+
   
 //middleware configuration
 app.use(bodyParser.json())
@@ -26,11 +28,11 @@ await mongoose.connect(process.env.MONGO_URL)
 console.log(`mongoDB connected`)
    
 
-app.use("/api/registerUser", router);
-app.use("/api/loginUser", router);
-app.use("/api/getUser", router);
-app.use("/api/updateUser", router);
-app.use("/api/deleteUser", router);
+app.use("/api/registerUser", userRouter);
+app.use("/api/loginUser", userRouter);
+app.use("/api/getUser", userRouter);
+app.use("/api/updateUser/:id", userRouter);
+app.use("/api/deleteUser/:id", userRouter);
 
 
 app.listen(port, ()=>{
