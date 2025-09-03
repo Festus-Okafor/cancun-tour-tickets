@@ -9,10 +9,12 @@ const usersSchema = new schema({
 
     email: {
         type: String ,
-         required: true
+         required: true,
+         unique: true
         },
     password: {
         type: String ,
+        required: true
         },
 },
    {timestamps: true});
