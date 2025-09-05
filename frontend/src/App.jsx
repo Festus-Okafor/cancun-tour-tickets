@@ -4,13 +4,14 @@ import Hotels from "./components/Hotels.jsx";
 import Experience from "./components/Experience.jsx";
 import Discounts from "./components/Discounts.jsx";
 import Register from "./components/Register.jsx"
-//import Login from "./components/Register.jsx";
 import About from "./components/About.jsx";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Details from './components/Details.jsx'
 
+
 import "./App.css";
+
 //import { set } from "mongoose";
 
 
@@ -26,9 +27,11 @@ function App() {
         if (!response.ok) {
           throw new Error(`HTTP error:`, response.status);
         }
+         
         const data = await response.json();
         console.log(data);
         setUsers(data);
+        
       } catch (e) {
         console.error(e);
       }

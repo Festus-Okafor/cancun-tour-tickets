@@ -1,4 +1,4 @@
-import { set } from 'mongoose';
+
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 //import {useRef , useEffect, useState} from 'react'
@@ -35,13 +35,13 @@ async function postAuthForm(state, data) {
     
 }
 
-// ...existing code...
+// Form submission handler
 async function handleSubmit(e) {
   e.preventDefault();
   const data = { name, email, password };
   const newUsers = await postAuthForm(state, data);
   if (newUsers) {
-    navigate("/About");
+    navigate("/");
     alert(
       state === "register"
         ? "Successfully Registered, Please go ahead and Login"
@@ -52,8 +52,6 @@ async function handleSubmit(e) {
 };
 
 
-
-// ...existing code...
   return (
     <>
     <div className="Register-container">
