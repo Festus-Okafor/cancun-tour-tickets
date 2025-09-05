@@ -22,7 +22,7 @@ function App() {
   useEffect(() => {
     async function userData() {
       try {
-        const response = await fetch("http://localhost:3003/getUser");
+        const response = await fetch("http://localhost:3003/api/users");
         if (!response.ok) {
           throw new Error(`HTTP error:`, response.status);
         }

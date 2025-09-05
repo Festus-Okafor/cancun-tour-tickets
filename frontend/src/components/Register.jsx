@@ -39,15 +39,15 @@ async function postAuthForm(state, data) {
 async function handleSubmit(e) {
   e.preventDefault();
   const data = { name, email, password };
-  const setUsers = await postAuthForm(state, data);
-  if (setUsers) {
-    navigate("/");
+  const newUsers = await postAuthForm(state, data);
+  if (newUsers) {
+    navigate("/About");
     alert(
       state === "register"
         ? "Successfully Registered, Please go ahead and Login"
         : "Login Successful"
     );
-    if (state === "register") setUsers([...users, setUsers]);
+    if (state === "register") newUsers([...users, setUsers]);
   }
 };
 
