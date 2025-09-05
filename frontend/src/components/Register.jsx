@@ -9,10 +9,10 @@ import Login from './Login.jsx';
 const Register = ({setUsers, users}) => {
 
  
-    const [state, setState] = React.useState("register");
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [password, setPassword] = React.useState("");
+    const [state, setState] = useState("login");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
   
 const navigate = useNavigate()
 
@@ -43,7 +43,7 @@ async function handleSubmit(e) {
   const newUser = await postRegisterUser(data);
   if (newUser) {
     alert("User registered successfully");
-    navigate("/");
+    navigate("/Login");
      if (state === "register") setUsers([...users, newUser]);
   
   }}

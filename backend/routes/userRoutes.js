@@ -7,8 +7,8 @@ import {registerUser, loginUser, getUser, updateUser, deleteUser} from "../contr
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.get("/", getUser);
-router.post("/", updateUser);
-router.post("/", deleteUser);
+router.get("/users", getUser);
+router.post("/update:id", updateUser);
+router.post("/delete:id", deleteUser);
 
 export default router;
