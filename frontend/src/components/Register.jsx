@@ -41,7 +41,7 @@ async function handleSubmit(e) {
   const data = { name, email, password };
   const newUsers = await postAuthForm(state, data);
   if (newUsers) {
-    navigate("/");
+    navigate("/Services");
     alert(
       state === "register"
         ? "Successfully Registered, Please go ahead and Login"

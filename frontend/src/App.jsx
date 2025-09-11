@@ -5,6 +5,7 @@ import Experience from "./components/Experience.jsx";
 import Discounts from "./components/Discounts.jsx";
 import Register from "./components/Register.jsx"
 import About from "./components/About.jsx";
+import Services from "./components/Services.jsx";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Details from './components/Details.jsx'
@@ -55,6 +56,7 @@ function App() {
         <Route path={"/About"} element={<About />} />
         <Route path={"/Discounts"} element={<Discounts />} />
         <Route path={"/Register"} element={<Register setUsers={setUsers} users ={users} />} />
+        <Route path={"/Services"} element={<Services />} />
       </Routes>
       
     </>

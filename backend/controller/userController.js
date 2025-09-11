@@ -1,9 +1,8 @@
 
 import Users from "../models/users.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcrypt"; 
 import jwt from "jsonwebtoken";
 //import cookieParser from 'cookie-parser'
-
 
 
 // now designing your crud operations
@@ -30,6 +29,7 @@ export const registerUser = async function (req, res){
     if (existinguser) {
       return res.json({ message: "email already registered!" });
     }
+    
 
     //hash password before saving to database
     const hashpassword = await bcrypt.hash(password, 10);
@@ -40,7 +40,7 @@ export const registerUser = async function (req, res){
       email,
       password: hashpassword
     });
-
+   
     await newUser.save();
     return res.json({ message: "User registered successfully" });
   } catch (error) {
@@ -48,7 +48,7 @@ export const registerUser = async function (req, res){
     console.log(error);
   }
 };
-
+  
 //LOGIN USER
 export const loginUser = async function (req, res) {
   try {
